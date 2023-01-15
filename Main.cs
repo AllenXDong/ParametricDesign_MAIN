@@ -85,6 +85,8 @@ public class Project
                 UI.GetUI().NXMessageBox.Show("Error", NXMessageBox.DialogType.Error, "模板文件不存在，请检查！");
                 return NXOpen.MenuBar.MenuBarManager.CallbackStatus.Error;
             }
+
+
             string template_name = Path.GetFileNameWithoutExtension(template_path);
             string template_folder = Path.GetDirectoryName(template_path);
         
@@ -117,7 +119,15 @@ public class Project
                         UI.GetUI().NXMessageBox.Show("Error",NXMessageBox.DialogType.Error,"数据文件不存在，请检查！");
                         return NXOpen.MenuBar.MenuBarManager.CallbackStatus.Error;
                     }
-                    NPOIUtils.loadExcelDataNew(buttonBean);
+                    try
+                    {
+                        NPOIUtils.loadExcelDataNew(buttonBean);
+                    }
+                    catch (Exception ex)
+                    {
+                        UI.GetUI().NXMessageBox.Show("Error", NXMessageBox.DialogType.Error, ex.Message);
+                        return NXOpen.MenuBar.MenuBarManager.CallbackStatus.Error;
+                    }
                     Form1 form1 = Form1.InstanceObject(buttonBean);
                     form1.Focus();
                     form1.Show();

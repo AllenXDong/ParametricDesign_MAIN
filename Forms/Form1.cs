@@ -274,13 +274,15 @@ namespace MainProject.Forms
                             };
                         case "4"://仅可以查看的
                             {
+                                double realValue = 0;
+                                NXUtils.getexpReadvalue(parameterBean.ExpressionName, out realValue); 
                                 TextBox textBox = new System.Windows.Forms.TextBox();
                                 textBox.Dock = System.Windows.Forms.DockStyle.Fill;
                                 textBox.Location = new System.Drawing.Point(85, 162);
                                 textBox.Name = parameterBean.ExpressionName + "_textBox";
                                 textBox.Size = new System.Drawing.Size(95, 20);
                                 textBox.Enabled = false;
-                                textBox.Text = expValue;
+                                textBox.Text = realValue.ToString();
                                 textBox.Tag = parameterBean;
                                 textBox.TextChanged += new System.EventHandler(valueChange_Handler);
                                 control = textBox;
