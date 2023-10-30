@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ParametricDesignConfig majorVersion="1" minorVersion="208">
+	<BUTTON>
+		<LABEL>三脚架</LABEL>
+		<ICON>create_simpart</ICON>
+		<IMAGE>=\\Sthqjstajia01\塔架项目数据_测试系统\塔架参数化数据模板\6.25_SK_GM_SJ_HJ_A版\图片\升降机停靠平台.bmp</IMAGE>
+		<ID_NAME>EXTENT20</ID_NAME>
+		<ID_VALUE>PD_SJJ</ID_VALUE>
+		<TEMPLATE_MODEL>a.prt</TEMPLATE_MODEL>
+		<EXCEL>sxh.xlsx</EXCEL>
+	</BUTTON>
+	<BUTTON LABEL="罗盘" BITMAP="create_simpart" ID="PD_LP"></BUTTON>
+</ParametricDesignConfig>
