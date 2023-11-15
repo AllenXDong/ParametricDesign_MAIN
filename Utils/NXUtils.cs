@@ -268,34 +268,6 @@ namespace MainProject.Utils
             }
             return errorCode;
         }
-
-        public static int getexpReadvalue(string expname, out double expvalue)
-        {
-            Session theSession = Session.GetSession();
-            Part workPart = theSession.Parts.Work;
-            int errorCode = 0;
-            expvalue = 0;
-            Expression expression1;
-            try
-            {
-                expression1 = (Expression)workPart.Expressions.FindObject(expname);
-                if (expression1 != null)
-                {
-                    expvalue = expression1.Value;
-                }
-            }
-            catch (NXException ex)
-            {
-                if (ex.ErrorCode == 3520016)
-                {
-                    errorCode = 1;
-                    //BlockStyler17110_2A::theUI->NXMessageBox()->Show("Block Styler", NXOpen::NXMessageBox::DialogTypeError, "找不到表达式：" + expname);
-                }
-
-            }
-            return errorCode;
-        }
-
         public static int replaceexpression(List<expression_struct> expvector)
         {
             int errorCode = 0;
